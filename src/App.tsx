@@ -13,8 +13,11 @@ function App() {
       {/* <UserNamesPage /> */}
       <BrowserRouter>
         <Routes>
-          <Route path='/' element={<WelcomePage />} />
-          <Route path='/user-names' element={<UserNamesPage />} />
+          <Route path='/' element={<Navigate to="/index" />} />
+          <Route path='/home' element={<WelcomePage />} />
+          <Route path='/user' >
+            <Route path='names' element={<UserNamesPage />} />
+          </Route>
         </Routes>
       </BrowserRouter>
     </>
