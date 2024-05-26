@@ -1,8 +1,8 @@
 // import reactLogo from './assets/react.svg'
 // import viteLogo from '/vite.svg'
 import './App.css'
-import UserNamesPage from './Pages/UserNames'
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
+import UserNamesPage from './Pages/UserNames'
 import WelcomePage from './Pages/Welcome';
 import Counter from './Pages/Counter';
 
