@@ -10,6 +10,9 @@ const WelcomePage = () => {
             <div>
                 <Link to="/counter">Counter</Link>
             </div>
+            <div>
+                <Link to="/posts">Posts</Link>
+            </div>
         </>
     )
 }
