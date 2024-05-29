@@ -7,7 +7,8 @@ import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import UserNamesPage from './Pages/UserNames'
 import WelcomePage from './Pages/Welcome';
 import Counter from './Pages/Counter';
-import PostsPage from './Pages/Posts';
+import AllPostsPage from './Pages/Posts/AllPosts';
+import OnePostPage from './Pages/Posts/OnePost';
 
 function App() {
 
@@ -21,7 +22,10 @@ function App() {
           <Routes>
             <Route path='/' element={<Navigate to="/home" />} />
             <Route path='/home' element={<WelcomePage />} />
-            <Route path='/posts' element={<PostsPage />} />
+            <Route path='/posts'>
+              <Route path='' element={<AllPostsPage />} />
+              <Route path=':id' element={<OnePostPage />} />
+            </Route>
             <Route path='/counter' element={<Counter />} />
             <Route path='/user' >
               <Route path='names' element={<UserNamesPage />} />

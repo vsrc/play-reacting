@@ -1,13 +1,8 @@
 import { useQuery } from "@tanstack/react-query";
+import { Link } from "react-router-dom";
 import axios from "axios";
-
-interface Post {
-    id: number,
-    title: string,
-    body: string
-}
-
-const PostsPage = () => {
+import Post from "./Post";
+const AllPostsPage = () => {
 
     const postsQuery = useQuery({
         queryKey: ["posts"],
@@ -30,7 +25,7 @@ const PostsPage = () => {
             <h1>Posts</h1>
             <ol>
                 {postsQuery.data.posts.map((post: Post) => (
-                    <li key={post.id}>{post.title}</li>
+                    <li key={post.id}><Link to={`/posts/${post.id}`}>{post.title}</Link></li>
                 ))}
             </ol>
         </div>
@@ -43,4 +38,4 @@ const fetchPosts = () => {
         .then(res => res.data);
 }
 
-export default PostsPage;
+export default AllPostsPage;
